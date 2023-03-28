@@ -18,8 +18,12 @@
     <!-- place navbar here -->
   </header>
   <main>
-    {% block content %}
-    {% endblock %}
+    {% include 'navbar.html' %}
+    <div class="container">
+        <br>
+        {% block content %}
+        {% endblock %}
+    </div>
   </main>
   <footer>
     <!-- place footer here -->
