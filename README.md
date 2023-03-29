@@ -14,3 +14,7 @@ python manage.py startapp website
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
+
+
+python manage.py makeMigrations
+python manage.py migrate

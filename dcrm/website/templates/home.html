@@ -2,13 +2,25 @@
 
 <div class="'col-md-6 offset-md-3">
   {% if user.is_authenticated %}
-  <div>Hello</div>
+  <h1>Records</h1>
+    {% if records%}
+        {% for record in records %}
+        {{ record.first_name }} 
+        {{ record.last_name }} 
+        {{ record.email }} 
+        {{ record.phone }} 
+        {{ record.address }} 
+        {{ record.city }} 
+        {{ record.state }} 
+        {{ record.zipcode }} 
+        <br>
+        {% endfor %}
+    {% endif %}
   {% else %}
   <h1>Login</h1>
   <br />
   <form method="POST" action="{% url 'home' %}">
     {% csrf_token %}
-    <form>
       <div class="mb-3">
         <input
           type="text"
@@ -30,7 +42,6 @@
       </div>
       <br />
       <button type="submit" class="btn btn-secondary">Login</button>
-    </form>
   </form>
 </div>
 {% endif %} {% endblock %}
